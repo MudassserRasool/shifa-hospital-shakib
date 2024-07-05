@@ -37,7 +37,7 @@ const validate = (data) => {
     name: Joi.string().required().label(" Name is required"),
     email: Joi.string().email().required().label("Email is required"),
     condition: Joi.boolean().label("Condition"),
-    password: passwordComplexity().required().label("Strong Password is required"),
+    password: Joi.string().required().label("Pasword is required"),
   });
   return schema.validate(data);
 };

@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const { login } = require("../Controller/authController");
+const { doctorlogin } = require("../Controller/authController");
 const {patientlogin} = require('../Controller/patientauth')
-router.post("/", login);
+router.post("/", doctorlogin);
 router.post("/patient", patientlogin);
 
 module.exports = router;

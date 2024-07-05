@@ -4,7 +4,7 @@ const { User } = require("../models/user");
 const Joi = require("joi");
 const bcrypt = require("bcrypt");
 
-const login = async (req, res) => {
+const doctorlogin = async (req, res) => {
     try {
         const { error } = validate(req.body);
         if (error)
@@ -21,6 +21,7 @@ const login = async (req, res) => {
         const token = await user.generateAuthToken();
         res.status(200).send({
             data: {
+                id:user._id,
                 name: user.name,
                 number: user.number,
                 specialization: user.specialization,
@@ -43,4 +44,4 @@ const validate = (data) => {
     return schema.validate(data);
 };
 
-module.exports = { login };
+module.exports = { doctorlogin };

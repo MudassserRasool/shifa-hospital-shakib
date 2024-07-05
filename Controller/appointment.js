@@ -61,7 +61,7 @@ const finddoctorAll = async (req, res) => {
 const finddoctorbyId = async (req, res) => {
   try {
     const doctorId = req.params.doctorId;
-    const doctor = await Appointment.findOne({ doctorId: doctorId });
+    const doctor = await Appointment.find({ doctorId: doctorId });
 
     if (!doctor) return res.status(404).send({ message: "doctor not found" });
 

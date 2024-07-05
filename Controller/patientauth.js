@@ -21,6 +21,7 @@ const patientlogin = async (req, res) => {
         const token = await user.generateAuthToken();
         res.status(200).send({
             data: {
+                id:user._id,
                 name: user.name,
                 condition:user.condition,
                 specialization: user.specialization,
